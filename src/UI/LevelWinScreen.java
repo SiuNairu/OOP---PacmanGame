@@ -1,15 +1,15 @@
-package pacman2;
+package UI;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import pacman2.PacmanGamePanel;
 
 public class LevelWinScreen extends JFrame implements ActionListener {
 
     private final PacmanGamePanel gamePanel;
-    private final int levelNumber; // level vừa clear (1-based để hiện đẹp)
+    private final int levelNumber;
     private JButton nextLevelButton, exitButton;
 
     public LevelWinScreen(int score, int levelNumber, PacmanGamePanel gamePanel) {

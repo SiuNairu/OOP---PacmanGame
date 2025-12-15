@@ -1,9 +1,9 @@
-package pacman2;
+package Main;
 
 import UI.Menu;
 import javax.swing.SwingUtilities;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new Menu().setVisible(true);

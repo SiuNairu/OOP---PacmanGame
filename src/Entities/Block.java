@@ -1,4 +1,4 @@
-package Enities;
+package Entities;
 
 import java.awt.Image;
 
@@ -11,9 +11,9 @@ public class Block {
     public Image image;
     public Image normalImage;
 
-    // Original location
-    protected final int startX;
-    protected final int startY;
+    // SỬA: Chuyển sang private để đảm bảo tính đóng gói
+    private final int startX;
+    private final int startY;
 
     public Block(Image image, int x, int y, int width, int height) {
         this.image = image;

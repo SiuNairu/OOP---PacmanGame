@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Map;
-
-/**
- *
- * @author NIE NIE
- */
 
 import java.awt.Image;
 import java.util.HashSet;
 import java.util.Set;
-import Enities.Block;
-import Enities.Ghost;
-import Enities.PacmanPlayer;
+import Entities.Block;
+import Entities.Ghost;
+import Entities.PacmanPlayer;
 
 public class GameMap {
 
@@ -25,7 +15,9 @@ public class GameMap {
     private final Image blueGhostImage;
     private final Image pinkGhostImage;
     private final Image orangeGhostImage;
-    private final Image pacmanImage;
+    
+    // Thay vì 1 ảnh pacman, giờ ta giữ 4 ảnh
+    private final Image pacmanUp, pacmanDown, pacmanLeft, pacmanRight;
 
     private PacmanPlayer pacman;
     private Set<Block> walls = new HashSet<>();
@@ -38,14 +30,20 @@ public class GameMap {
                    Image blueGhostImage,
                    Image pinkGhostImage,
                    Image orangeGhostImage,
-                   Image pacmanImage) {
+                   // Nhận 4 ảnh vào constructor
+                   Image pacmanUp, Image pacmanDown, Image pacmanLeft, Image pacmanRight) {
         this.tileSize = tileSize;
         this.wallImage = wallImage;
         this.redGhostImage = redGhostImage;
         this.blueGhostImage = blueGhostImage;
         this.pinkGhostImage = pinkGhostImage;
         this.orangeGhostImage = orangeGhostImage;
-        this.pacmanImage = pacmanImage;
+        
+        // Gán vào biến
+        this.pacmanUp = pacmanUp;
+        this.pacmanDown = pacmanDown;
+        this.pacmanLeft = pacmanLeft;
+        this.pacmanRight = pacmanRight;
     }
 
     public void loadMap(int level) {
@@ -67,7 +65,8 @@ public class GameMap {
                     Block food = new Block(null, x + 14, y + 14, 4, 4);
                     foods.add(food);
                 } else if (ch == 'P') {
-                    pacman = new PacmanPlayer(pacmanImage, x, y, tileSize, tileSize);
+                    // CẬP NHẬT: Truyền đủ 4 ảnh vào PacmanPlayer
+                    pacman = new PacmanPlayer(pacmanUp, pacmanDown, pacmanLeft, pacmanRight, x, y, tileSize, tileSize);
                 } else if (ch == 'r') {
                     ghosts.add(new Ghost(redGhostImage, x, y, tileSize, tileSize));
                 } else if (ch == 'b') {

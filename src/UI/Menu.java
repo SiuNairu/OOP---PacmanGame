@@ -1,16 +1,9 @@
-
 package UI;
 
-/**
- *
- * @author NIE NIE
- */
-
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
-import pacman2.PacmanGamePanel;
-import pacman2.PacmanGamePanel;
 
 public class Menu extends JFrame implements ActionListener {
     private JButton playButton, exitButton;
