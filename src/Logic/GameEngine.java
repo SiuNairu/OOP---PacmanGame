@@ -4,10 +4,11 @@ import Map.GameMap;
 import Utils.Popup;
 import Utils.Respawn;
 
-import java.util.*; // Import này đã bao gồm Set và List
+import java.util.*;
 
 import Entities.Block;
 import Entities.Ghost;
+
 
 public class GameEngine {
     private final GameState state;
@@ -114,7 +115,7 @@ public class GameEngine {
             }
             
             // state.walls là Set, truyền vào updateGhostBehavior (nhận Set) là hợp lệ
-            ghostController.updateGhostBehavior(g, now, state.powerMode, state.walls);
+            ghostController.updateGhostBehavior(g, state.pacman, now, state.powerMode, state.walls);
         }
         state.ghosts.removeAll(eatenGhosts);
     }
