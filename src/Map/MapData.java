@@ -78,4 +78,3 @@ public class MapData {
         return ALL_MAPS.size();
     }
 }
- 
