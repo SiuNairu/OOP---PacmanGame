@@ -2,7 +2,10 @@ package Entities;
 
 import java.awt.Image;
 import java.util.Random;
+<<<<<<< HEAD
+=======
 
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
 import Utils.Direction;
 
 public class Ghost extends MovableBlock {
@@ -20,18 +23,33 @@ public class Ghost extends MovableBlock {
         resetTurnCooldown();
     }
 
+<<<<<<< HEAD
+    // ===== MOVEMENT MECHANICS ONLY =====
+=======
     // ===== MOVEMENT MECHANICS =====
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
 
     private int getStep(boolean powerMode) {
         if (getWidth() <= 0) return 0;
         return getWidth() / (powerMode ? scaredStepFactor : normalStepFactor);
     }
 
+<<<<<<< HEAD
+    public void applyDirection(Direction dir, boolean powerMode) {
+        setDirection(dir);
+        updateVelocity(powerMode);
+    }
+
+=======
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
     public void updateVelocity(boolean powerMode) {
         int step = getStep(powerMode);
         super.updateVelocity(step);
     }
 
+<<<<<<< HEAD
+    // ===== TURN COOLDOWN (MECHANICS, NOT AI) =====
+=======
     public void initializeRandomDirection(boolean powerMode) {
         Direction[] dirs = Direction.values();
         // SỬA: Dùng setter vì direction là private
@@ -53,6 +71,7 @@ public class Ghost extends MovableBlock {
     }
 
     // ===== TURN COOLDOWN (MECHANICS, KHÔNG PHẢI AI) =====
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
 
     public boolean canTurnNow(long now) {
         if (now - lastTurnMs < turnCooldownMs) return false;
@@ -66,6 +85,10 @@ public class Ghost extends MovableBlock {
     private void resetTurnCooldown() {
         this.turnCooldownMs = 80 + random.nextInt(71);
     }
+<<<<<<< HEAD
+}
+=======
 
 
 }
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
