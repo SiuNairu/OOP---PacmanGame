@@ -1,9 +1,17 @@
+<<<<<<< HEAD
     package Logic;
+=======
+package Logic;
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
 
 import Entities.Block;
 import Entities.MovableBlock;
 import Utils.Direction;
+<<<<<<< HEAD
 import java.util.Set; 
+=======
+import java.util.Set; // Đổi import từ List sang Set
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
 
 public class CollisionDetector {
 
@@ -15,6 +23,10 @@ public class CollisionDetector {
         this.BOARD_HEIGHT = boardHeight;
     }
 
+<<<<<<< HEAD
+=======
+    // Kiểm tra va chạm cơ bản giữa 2 khối
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
     public boolean checkCollision(Block a, Block b) {
         return a.getX() < b.getX() + b.getWidth() &&
                a.getX() + a.getWidth() > b.getX() &&
@@ -22,6 +34,10 @@ public class CollisionDetector {
                a.getY() + a.getHeight() > b.getY();
     }
 
+<<<<<<< HEAD
+=======
+    // Đổi List<Block> thành Set<Block> ở tham số walls
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
     public boolean canMove(Block b, Direction dir, Set<Block> walls) {
         int x = b.getX();
         int y = b.getY();
@@ -43,6 +59,10 @@ public class CollisionDetector {
         return true; 
     }
 
+<<<<<<< HEAD
+=======
+    // Đổi List<Block> thành Set<Block>
+>>>>>>> afbe3349e4d6b845f61ec694a68c1c95fd62d407
     public void resolveWallCollision(MovableBlock b, Set<Block> walls) {
         for(Block w : walls) {
             if(checkCollision(b, w)) {
